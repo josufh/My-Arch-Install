@@ -21,7 +21,7 @@ mkdir -p /mnt/boot/efi
 mount /dev/p1 /mnt/boot/efi
 
 # Install minimal packages
-pacstrap /mnt base base-devel linux linux-lts linux-firmware networkmanager grub efibootmgr sudo vim iw iwd dialog wpa_supplicant wireless_tools netctl
+pacstrap /mnt base base-devel linux linux-lts linux-firmware networkmanager grub efibootmgr sudo vim iw iwd dialog wpa_supplicant wireless_tools netctl terminus-font
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # chroot into arch
