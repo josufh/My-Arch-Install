@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias bashconfig='vim ~/.bashrc'
+alias bashsource='source ~/.bashrc'
 alias ls='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias ..='cd ..'
