@@ -9,18 +9,22 @@ curl -o /etc/pacman.d/mirrorlist https://archlinux.org/mirrorlist/?country=JP&pr
 pacman -Syy
 pacman -Sy arch-install-scripts
 
+# Check what disk to install to and make partitions
+lsblk
 cfdisk /dev/<target_disk>
 #p1: +512M mkfs.fat -F32
 #p2: mkfs.ext4
 
+# Mount partitions
 mount /dev/p2 /mnt
 mkdir -p /mnt/boot/efi
 mount /dev/p1 /mnt/boot/efi
 
+# Install minimal packages
 pacstrap /mnt base base-devel linux linux-lts linux-firmware networkmanager grub efibootmgr sudo vim iw iwd dialog wpa_supplicant wireless_tools netctl
-
 genfstab -U /mnt >> /mnt/etc/fstab
 
+# chroot into arch
 arch-chroot /mnt
 
 ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
