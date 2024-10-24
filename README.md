@@ -26,12 +26,19 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # chroot into arch
 arch-chroot /mnt
+passwd
+
+# Create user
+sudo useradd -m -G wheel -s /bin/bash <username>
+vim /etc/sudoers
+
+vim /etc/vconsole.conf
+# KEYMAP=jp106
 
 ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 hwclock --systohc
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "archlinuxbtw" > /etc/hostname
-passwd
 
 locale-gen
 
