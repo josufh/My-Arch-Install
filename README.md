@@ -2,9 +2,10 @@
 
 ```shell
 loadkeys jp106
+
+# Change to Arch Linux mirrors and update pacman if needed
 curl -o /etc/pacman.d/mirrorlist https://archlinux.org/mirrorlist/all/
 curl -o /etc/pacman.d/mirrorlist https://archlinux.org/mirrorlist/?country=JP&protocol=https&ip_version=4
-
 pacman -Syy
 pacman -Sy arch-install-scripts
 
