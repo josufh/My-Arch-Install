@@ -22,4 +22,4 @@ if [ -f /usr/share/bash-completion/completion ]; then
 fi
 
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
+#ssh-add ~/.ssh/id_rsa
